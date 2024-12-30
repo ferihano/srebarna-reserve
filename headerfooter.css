@@ -1,0 +1,414 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Nunito', sans-serif;
+    background-color: #a6cbc6;
+    color: #1a3e5f;
+    line-height: 1.5;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 20px;
+    background-color: rgba(96, 128, 104, 0.9);
+    z-index: 3;
+    position: relative;
+}
+
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo img {
+    height: 60px;
+}
+
+.logo-text {
+    font-family: "Yeseva One", serif;
+    font-size: 24px;
+    font-weight: bold;
+    color: #155a84;
+    text-shadow: 1px 1px 2px rgba(204, 197, 172, 0.8);
+}
+
+
+nav ul {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    position: relative;
+}
+
+nav ul li a {
+    color: #eff7e1;
+    font-size: 18px;
+    margin-right: 7px;
+    text-decoration: none;
+    font-weight: bold;
+    position: relative;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+    color: #ffdf77;
+}
+
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: rgba(75, 97, 81, 0.9);
+    transition: width 0.3s ease;
+}
+
+nav ul li a:hover::after,
+nav ul li a.active::after {
+    width: 100%;
+}
+
+
+.checkbtn {
+    display: none;
+    font-size: 30px;
+    color: #eff7e1;
+    cursor: pointer;
+}
+
+
+#check {
+    display: none;
+}
+
+
+@media (max-width: 858px) {
+    .checkbtn {
+        display: block;
+        float: right;
+    }
+    nav ul {
+        position: fixed;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100vh;
+        flex-direction: column;
+        justify-content: center;
+        background-color: rgba(96, 128, 104, 0.95);
+        text-align: center;
+        transition: left 0.3s ease-in-out;
+    }
+    #check:checked ~ nav ul {
+        left: 0;
+    }
+    nav ul li {
+        margin: 20px 0;
+    }
+    nav ul li a {
+        font-size: 20px;
+    }
+}
+
+
+
+.line-container {
+    position: relative;
+    width: 100%;
+    height: 50px; 
+    display: flex;
+    align-items: flex-end; 
+    overflow: hidden;
+    z-index: 3;
+}
+
+.line {
+    width: 100%;
+    height: 2px;
+    background-color: #1a3e5f; 
+    position: absolute;
+    top: 50%; 
+    z-index: 3;
+}
+
+
+.pelican {
+    width: 50px;
+    height: 50px;
+    background-image: url('images/pelican.png');
+    background-size: cover;
+    position: absolute;
+    bottom: 0; 
+    animation: pelicanMove 80s linear infinite; 
+    z-index: 3;
+}
+
+
+
+@keyframes pelicanMove {
+    0% {
+        left: 0; 
+        transform: scaleX(1); 
+    }
+    49.99% {
+        left: calc(100% - 50px); 
+        transform: scaleX(1); 
+    }
+    50% {
+        transform: scaleX(-1); 
+    }
+    100% {
+        left: 0; 
+        transform: scaleX(-1); 
+    }
+}
+
+
+
+.footer {
+    background-color: rgba(96, 128, 104, 0.9);
+    padding: 10px 0; 
+    color: #eff7e1;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    z-index: 2;
+    
+}
+.footer::before {
+    content: ""; 
+    position: absolute;
+    bottom: 0; 
+    left: 2px;
+    width: 100%; 
+    height: 450px; 
+    background-image: url('images/PinClipart.com_wheat-harvest-clip-art_3695578.png'); 
+    background-size: contain;
+    background-repeat: no-repeat; 
+    background-position: bottom left; 
+    opacity: 0.8;
+    z-index: -10;
+}
+
+@media (max-width: 768px) {
+    .footer::before {
+        height: 300px; 
+    }
+}
+
+
+@media (max-width: 480px) {
+    .footer::before {
+        height: 200px; 
+    }
+}
+.container {
+    max-width: 1170px;
+    margin: auto;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start; 
+    gap: 15px; 
+}
+
+
+.logo-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 25%; 
+    margin-top: 80px;
+    margin-right: 50px; 
+    color: #eff7e1;
+    text-align: left;
+    z-index: 4;
+}
+
+.footer-logo {
+    width: 120px;
+    height: auto;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.contact-info {
+    font-size: 16px;
+    
+}
+
+.contact-info a{
+    text-decoration: none;
+    color: #eff7e1;
+}
+
+.contact-info i {
+    color: #ffdf77;
+    margin-right: 5px;
+}
+
+
+.footer-col {
+    width: 22%; 
+    padding: 0 15px;
+    margin-bottom: 10px;
+    box-sizing: border-box; 
+    z-index: 3;
+    
+}
+
+.footer-col h4 {
+    font-size: 24px;
+    color: #155a84;
+    text-transform: capitalize;
+    margin-bottom: 15px;
+    font-weight: 500;
+    position: relative;
+    font-family: "Yeseva One", serif;
+    font-weight: bold; 
+    color: #155a84; 
+    text-shadow: 1px 1px 2px rgba(204, 197, 172, 0.8); 
+}
+
+.footer-col h4::before {
+    content: '';
+    position: absolute;
+    left: 0%;
+    bottom: -5px;
+    background-color: rgba(75, 97, 81, 0.9);
+    height: 2px;
+    width: 180px;
+}
+
+.footer-col ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-col ul li {
+    margin-bottom: 10px;
+}
+
+.footer-col ul li a {
+    font-size: 18px;
+    color: #eff7e1;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+    
+}
+
+.footer-col ul li a:hover {
+    color: #ffdf77;
+    padding-left: 10px; 
+}
+
+
+.social-icons{
+  z-index: 4;
+  position: relative;
+}
+.social-notice {
+    text-align: center;
+    margin-top: 20px;
+    
+}
+
+.social-icons i {
+    color: #1a3e5f;
+    font-size: 35px;
+    margin: 0 15px;
+    transition: transform 0.3s, color 0.3s;
+    position: relative;
+    z-index: 5;
+    
+}
+
+.social-icons i:hover {
+    color: #ffdf77;
+    transform: scale(1.5);
+}
+
+
+.notice {
+    text-align: center;
+    color: #ffffff;
+    font-size: 14px;
+    flex-grow: 1;
+   
+}
+
+@media (max-width: 991px) {
+    .logo-info {
+        width: 100%;
+        text-align: center; 
+        margin: 20px 0;
+    }
+    .footer-logo {
+        width: 100px; 
+    }
+    .contact-info {
+        font-size: 14px; 
+        text-align: center; 
+    }
+}
+
+@media (max-width: 767px) {
+    .footer-col {
+        width: 50%; 
+        margin-bottom: 20px;
+    }
+    .logo-info {
+        margin-bottom: 30px; 
+    }
+    .footer-logo {
+        width: 90px; 
+    }
+    .footer-col h4::before {
+        width: 140px; 
+        text-align: center;
+    }
+}
+
+@media (max-width: 574px) {
+    .footer-col {
+        width: 100%; 
+        text-align: center; 
+    }
+    .logo-info {
+        width: 100%;
+        margin: 20px 0;
+    }
+    .contact-info {
+        font-size: 12px; 
+    }
+    .footer-logo {
+        width: 80px; 
+    }
+    .footer-col h4::before {
+        display: none;
+    }
+    .social-icons i {
+        font-size: 28px; 
+        margin: 0 10px;
+    }
+    .notice {
+        font-size: 12px; 
+    }
+}

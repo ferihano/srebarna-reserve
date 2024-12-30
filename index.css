@@ -1,0 +1,585 @@
+
+.content {
+    width: 90%;
+    margin: 30px auto;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+
+.content .main-content {
+    width: 70%;
+    flex:3;
+    padding: 10px;
+    transition: width 0.3s ease;
+    
+}
+
+.sidebar {
+    width: 30%; 
+    padding: 20px; 
+    background-color: #eff7e1; 
+    border-radius: 8px; 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
+    box-sizing: border-box; 
+    position: relative;
+    overflow: hidden;
+    transition: width 0.3s ease;
+}
+
+.sidebar-toggle-btn {
+    display: none;
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: none;
+    border: none;
+    font-size: 30px;
+    color: #eff7e1;
+    cursor: pointer;
+    z-index: 10;
+}
+
+
+.sidebar .section {
+    background-color: #bbc7a8; 
+    padding: 20px;
+    border-radius: 5px; 
+    margin-bottom: 20px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+}
+
+
+.sidebar .section-title {
+    color: #1a3e5f;
+    font-weight: bold;
+    margin-bottom: 15px; 
+    border-bottom: 2px solid #1a3e5f; 
+    padding-bottom: 5px;
+    font-family: "Yeseva One", serif;
+    font-size: 24px; 
+    text-shadow: 1px 1px 2px rgba(204, 197, 172, 0.8); 
+}
+
+
+.sidebar .search form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.sidebar .search .text-input {
+    width: 90%;
+    padding: 10px;
+    margin-top: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+
+.sidebar .topics ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar .topics ul li {
+    margin-bottom: 10px;
+}
+
+.sidebar .topics ul li a {
+    color: #1a3e5f;
+    font-size: 18px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-right: 2rem;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.sidebar .topics ul li a:hover {
+    color: #ffdf77; 
+    padding: 10px;
+}
+
+@media (max-width: 768px) {
+    
+    .sidebar-toggle-btn {
+        display: block;
+        top: 31px;
+        left: 90%;
+        transform: translateX(-50%);
+    }
+
+   
+    .sidebar {
+        display: none;
+        width: 100%;
+        position: absolute;
+        top: 150px;
+        left: 0;
+        background-color: #eff7e1;
+        padding: 20px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    
+    .sidebar.open {
+        display: block;
+    }
+
+    
+    .content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .main-content {
+        width: 100%; 
+        margin: 10px 0;
+    }
+}
+
+
+@media (min-width: 769px) {
+    .sidebar {
+        width: 30%;
+        padding: 30px;
+        background-color: #eff7e1;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        position: relative;
+    }
+
+    .content {
+        display: flex;
+    }
+
+    .main-content {
+        width: 70%;
+        padding: 10px;
+    }
+}
+
+
+
+
+.facts-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 10px;
+    position: relative; 
+    overflow: hidden; 
+    height: 300px;
+}
+
+.facts-container .fact-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; 
+    position: absolute;
+    opacity: 0; 
+    transition: opacity 1s ease-in-out; 
+}
+
+@keyframes slideImages {
+    0% {
+        opacity: 0; 
+    }
+    20% {
+        opacity: 1; 
+    }
+    40% {
+        opacity: 0; 
+    }
+    60% {
+        opacity: 0; 
+    }
+    80% {
+        opacity: 1; 
+    }
+    100% {
+        opacity: 0; 
+    }
+}
+
+.facts-container .fact-image:nth-child(1) {
+    animation: slideImages 50s infinite; 
+}
+
+.facts-container .fact-image:nth-child(2) {
+    animation: slideImages 50s infinite 10s; 
+}
+
+.facts-container .fact-image:nth-child(3) {
+    animation: slideImages 50s infinite 20s; 
+}
+
+.facts-container .fact-image:nth-child(4) {
+    animation: slideImages 50s infinite 30s; 
+}
+
+.facts-container .fact-image:nth-child(5) {
+    animation: slideImages 50s infinite 40s;
+}
+
+.phone{
+    background-color: #bbc7a8; 
+    padding: 20px;
+    border-radius: 5px; 
+    margin-top: 20px ;
+    margin-bottom: 20px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+
+}
+
+.png{
+    display: block;
+    margin: 90px auto; 
+    width: 550px;
+    height: auto;
+}
+
+@media (max-width: 768px) {
+    .png {
+        width: 80%; 
+    }
+}
+
+
+@media (max-width: 480px) {
+    .png {
+        width: 90%; 
+    }
+}
+
+.content .gallery{
+    width: 70%;
+    height: auto;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap:20px;
+    text-align: right;
+    margin-top: 75px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+    z-index: 3;
+
+
+}
+.title {
+    font-size: 20px;
+    font-weight: bold;
+    color: #155a84;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+    margin-top: 0px;
+    font-family: 'Yeseva One', serif;
+    text-align: center; 
+    margin-left: 20px;
+}
+
+.gallery-item {
+    width: 160px;
+    height: 160px;
+    margin-bottom: 20px;
+    border-radius: 50%; 
+    overflow: hidden;
+    border: 4px solid #eff7e1; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+    transition: transform 0.3s ease, box-shadow 0.3s ease; 
+}
+
+
+.gallery-item:hover {
+    transform: scale(1.1);
+    opacity: 0.3;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+}
+
+
+
+
+@media (max-width: 768px) {
+    .content .gallery {
+        width: 90%; 
+        margin-top: 20px;
+        flex-direction: column; 
+        align-items: center; 
+    }
+
+    .gallery-item {
+        width: 240px !important; 
+        height: 240px !important;
+    }
+}
+
+
+@media (max-width: 480px) {
+    .content .gallery {
+        width: 100%; 
+        margin-top: 20px;
+    }
+
+    .gallery-item {
+        width: 300px !important; 
+        height: 300px !important;
+    }
+}
+
+.recent-post-title{
+    margin:10px;
+    font-size: 28px;
+    font-weight: bold;
+    color: #155a84;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+    margin-bottom: 20px;
+    font-family: 'Yeseva One', serif;
+}
+
+.content .main-content .post{
+    width: 95%;
+    height: 270px;
+    margin:10px auto;
+    border-radius: 5px;
+    background: #eff7e1;
+    position: relative;
+    overflow: hidden;
+}
+.content .main-content .post-image{
+    width: 40%;
+    height: 100%;
+    float: left;
+    transition: transform 0.3s ease;
+}
+
+.post:hover .post-image,
+.post .read-more:hover ~ .post-image {
+    transform: scale(1.1); 
+}
+.content .main-content .post .post-preview{
+    width: 55%;
+    padding: 10px;
+    float: right;
+}
+
+.content .main-content .post .post-preview h2 a{
+    text-decoration: none;
+    font-size: 28px;
+    font-family: "Yeseva One", serif;
+    font-weight: bold; 
+    color: #155a84; 
+    text-shadow: 1px 1px 2px rgba(204, 197, 172, 0.8); 
+}
+.btn{
+    padding: .3rem .5rem;
+    background: #1a3e5f;
+    color:#eff7e1;
+    border:1px solid transparent;
+    border-radius: .25rem;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.btn .read-more a{
+    font-size: 18px;
+    padding: .5rem 1rem;
+    background: #1a3e5f;
+    color:#eff7e1;
+    border:1px solid transparent;
+    border-radius: .25rem;
+}
+
+.btn:hover{
+    color: #1a3e5f;
+    background-color: #ffdf77;
+
+}
+
+.content .main-content .read-more{
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    border: 1px solid #1a3e5f;
+}
+
+.content .partners {
+    width: 100%;
+    padding: 20px;
+    top: 60px;
+    box-sizing: border-box;
+    text-align: center;
+    position: relative;
+    z-index: 6;
+    
+}
+
+.partners::before {
+    content: ""; 
+    position: absolute;
+    bottom: 0px; 
+    left: 2px;
+    width: 100%; 
+    height: 400px; 
+    background-image: url('images/PinClipart.com_pelican-clipart_3564751.png'); 
+    background-size: contain; 
+    background-repeat: no-repeat; 
+    background-position: bottom right; 
+    opacity: 0.8;
+    z-index: 1; 
+}
+
+@media (max-width: 768px) {
+    .partners::before {
+        height: 300px; 
+    }
+}
+
+
+@media (max-width: 480px) {
+    .partners::before {
+        height: 200px; 
+    }
+}
+
+.partners-title {
+    font-size: 28px;
+    font-weight: bold;
+    color: #155a84;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+    font-family: 'Yeseva One', serif;
+    margin-bottom: 20px;
+    margin-top: -20px;
+}
+
+.partners-gallery {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.partner-item {
+    width: 150px;
+    height: 150px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin:20px 20px;
+    z-index: 6;
+}
+
+.partner-item:hover {
+    transform: scale(1.15);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.partner-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    margin:10px 10px;
+}
+
+
+
+
+@media (max-width: 768px) {
+    .content .main-content {
+        width: 100%;
+    }
+
+    .gallery {
+        width: 100%;
+        height: 200px;
+    }
+
+    .gallery-item {
+        width: 100px;
+        height: 100px;
+    }
+
+    .recent-post-title {
+        font-size: 22px;
+    }
+
+    .content .main-content .post-image {
+        width: 100%;  
+        height: auto;
+    }
+
+    .content .main-content .post .post-preview {
+        width: 100%;  
+    }
+
+    .content .main-content .post .post-preview h2 a {
+        font-size: 20px;  
+    }
+
+    .btn {
+        padding: .2rem .3rem;
+        font-size: 14px;  
+    }
+    
+
+    .btn:hover {
+        color: #1a3e5f;
+        background-color: #ffdf77;
+    }
+}
+
+
+@media (max-width: 480px) {
+    .title {
+        font-size: 18px;
+    }
+
+    .gallery-item {
+        width: 80px;
+        height: 80px;
+    }
+
+    .recent-post-title {
+        font-size: 20px;
+    }
+
+    .content .main-content .post-image {
+        width: 100%;  
+        height: auto;
+    }
+
+    .content .main-content .post .post-preview {
+        width: 100%;  
+    }
+
+    .content .main-content .post .post-preview h2 a {
+        font-size: 20px;  
+    }
+
+    .btn {
+        padding: .2rem .3rem;
+        font-size: 14px;  
+    }
+
+    .btn:hover {
+        color: #1a3e5f;
+        background-color: #ffdf77;
+    }
+}
+
+
+
+
+
+
+
